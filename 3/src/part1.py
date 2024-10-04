@@ -94,11 +94,13 @@ for n in range(10,410,10): # Iterate through the number of trees
         predicts.append(pred)
     Bias_2.append(np.mean((y_test_pred/10 - y_test)**2))
     Variance.append(np.mean(np.mean((np.array(predicts)-np.mean(np.array(predicts), axis=0))**2, axis=0)))
+ 
 plt.plot(range(10,410,10), Bias_2)
 plt.xlabel('Number of Trees')
 plt.ylabel('Bias^2')
 plt.title('Bias^2 versus Number of Trees in Random Forest Regressor')
 plt.show()
+
 plt.plot(range(10,410,10), Variance)
 plt.xlabel('Number of Trees')
 plt.ylabel('Variance')
